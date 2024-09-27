@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}
+|home
+{% endblock title %}
+{% block content %}
+{% load static %}
+    <section class="home" id="home">
+        <div class="hero-info">
+            <h3>Welcome To my World</h3>
+            <h1>Hi I'm Nishan kumar chaudhary</h1>
+
+            <div class="text-animate">
+                <h2>Web Developer</h2>
+            </div>
+
+            <p>A Web Developer is a specialized programmer who focuses on creating applications related to the World Wide Web or distributed networks. Their primary responsibility is to develop websites and web applications using various technologies such
+                as HTML, CSS, Javascript,Reactjs,Tailwindcss & Python Django. Web developers ensure that websites are visually appealing, user-friendly, and functionally robust. </p>
+
+            <div class="btn-box">
+                <a href="mailto:nishanads77@gmail.com" class="btn">Hire Me Now ! <i class='bx bx-right-arrow-alt' ></i></a>
+                <a href="{% static 'img/resume.pdf' %}" target="_blank" class="btn d-CV" onclick="downloadCV(event)">Download CV <i class='bx bx-download'></i></a>
+            </div>
+
+            <div class="social-media">
+                <div class="bg-icon">
+                    <a href="https://www.instagram.com/chaudharynishankumar"><i class='bx bxl-instagram'></i></a>
+                    <span></span>
+                </div>
+
+                <div class="bg-icon">
+                    <a href="https://github.com/Nishanchaudhary"><i class='bx bxl-github'></i></a>
+                    <span></span>
+                </div>
+
+                <div class="bg-icon">
+                    <a href="https://twitter.com/NishanKumarChy1"><i class='bx bxl-twitter'></i></a>
+                    <span></span>
+                </div>
+
+                <div class="bg-icon">
+                    <a href="https://www.facebook.com/profile.php?id=100069756390641&mibextid=ZbWKwL"><i class='bx bxl-facebook'></i></a>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="img-hero">
+            <img src="{% static 'img/hero.png' %}" alt="">
+            <div class="rotate-text">
+                <div class="text">
+                    <p>I'm Student And I'm WEB Developer And I'm Designer</p>
+                </div>
+                <span><i></i></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function downloadCV(event) {
+          event.preventDefault(); 
+          alert('CV is not updated please message me in Whatapp for updated CV__!!');
+          window.location.href = "{% static 'img/resume.pdf' %}"; 
+        }
+      </script>
+
+{% endblock content %}

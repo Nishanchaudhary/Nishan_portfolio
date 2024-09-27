@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}
+|about
+{% endblock title %}
+{% block content %}
+{% load static %}
+<section class="about" id="about">
+    <div class="about-img">
+        <img src="{% static 'img/aboutMe1.png' %}" alt="" class="aboutHero">
+        <div class="showcase-ring">
+            <img src="{% static 'shapes/ring.png' %}" class="ring">
+            <img src="{% static 'shapes/circle.png' %}" class="circle">
+        </div>
+    </div>
+    <div class="about-content">
+        <h2 class="heading">About Me</h2>
+        <p>Over the past months, I’ve been building my skills as a Junior Web Developer and Designer. Though I have not
+            yet worked on a real company website, I’m dedicated to learning and growing in this field. My focus is on
+            improving efficiency, reducing development time, and designing user-friendly, visually appealing interfaces.
+            Each project helps me refine my abilities and move closer to my goal of contributing to real-world solutions
+        </p>
+        <div class="about-btn">
+            <button class="active">Main Skills</button>
+
+        </div>
+        <div class="content-btn">
+            <div class="content">
+                <div class="text-box">
+                    <p>Frontend Technologies</p>
+                    <span>HTML,CSS,Bootstrap,Tailwindcss,JavaScript,Reactjs</span>
+                </div>
+                <div class="text-box">
+                    <p>Backend Technologies</p>
+                    <span>Python Django,Mysql</span>
+                </div>
+                <div class="text-box">
+                    <p>UI UX Design Technologies</p>
+                    <span>Simple Figma design</span>
+                </div>
+            </div>
+        </div>
+        <div class="cvContent">
+            <a href="{% static 'img/resume.pdf' %}" target="_blank" class="btn d-CV" onclick="downloadCV(event)">Download CV <i class='bx bx-download'></i></a>
+        </div>
+    </div>
+</section>
+
+<script>
+    function downloadCV(event) {
+      event.preventDefault(); 
+      alert('CV is not updated please message me in Whatapp for updated CV__!!');
+      window.location.href = "{% static 'img/resume.pdf' %}"; 
+    }
+  </script>
+
+
+{% endblock content %}

@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% block title %}
+|services
+{% endblock title %}
+{% block content %}
+{% load static %}
+
+<section class="services" id="services" style="margin-top: 25px !important;">
+    <div class="main-text">
+        <h2 class="heading">My Services</h2>
+        <span>what i will do for you</span>
+    </div>
+
+    <div class="allServices">
+        <div class="servicesItem">
+            <div class="icon-services">
+                <i class='bx bx-code-alt'></i>
+                <span></span>
+            </div>
+            <h3>Frontend Web Development</h3>
+            <p class="content">
+                I've crafted dynamic and scalable solutions, demonstrating expertise in front-end technologies. My
+                experience is highlighted by successful project implementations, utilizing a diverse skill set that
+                includes JavaScript, HTML, CSS, Tailwindcss, .
+            <p class="more-text">I am also experienced in various modern libraries and frameworks like React . I
+                constantly aim to improve user experience by writing clean, efficient, and maintainable code.</p>
+            </p>
+            <a href="" class="readMore">Read More</a>
+        </div>
+
+        <div class="servicesItem">
+            <div class="icon-services">
+                <i class='bx bx-code'></i>
+                <span></span>
+            </div>
+            <h3>Backend Web Development</h3>
+            <!-- <p class="content" > 
+                I've crafted dynamic and scalable solutions, demonstrating expertise in back-end technologies. My experience is highlighted by successful project implementations, utilizing a diverse skill set that includes python Django, JavaScript,Mysql more. 
+                <p class="more-text">I am also experienced in various modern libraries and frameworks like React . I constantly aim to improve user experience by writing clean, efficient, and maintainable code.</p> 
+            </p>
+            <a href="" class="readMore">Read More</a> -->
+
+            <p class="content">
+                I've crafted dynamic and scalable solutions, demonstrating expertise in back-end technologies. My
+                experience is highlighted by successful project implementations, utilizing a diverse skill set that
+                includes Python, JavaScript, MySQL, and more.
+            <p class="more-text1" style="display:none;">
+                I am also experienced in various modern libraries and frameworks like Django. I constantly aim to
+                improve user experience by writing clean, efficient, and maintainable code.
+            </p>
+            </p>
+            <a href="#" id="readMore1" class="readMore1">Read More</a>
+
+        </div>
+
+        <div class="servicesItem">
+            <div class="icon-services">
+                <i class='bx bx-desktop'></i>
+                <span></span>
+            </div>
+            <h3>UI / UX Design</h3>
+            <p class="content">
+                I've crafted intuitive and visually appealing interfaces, specializing in usability and design thinking.
+                My expertise extends to user-centered design, prototyping, and a keen focus on enhancing user
+                experiences.
+            <p class="more-text2" style="display: none;">
+                I continuously aim to bridge the gap between aesthetics and functionality, ensuring designs are not only
+                beautiful but also practical and user-friendly.
+            </p>
+            </p>
+            <a href="#" id="uiux" class="readMore2">Read More</a>
+        </div>
+    </div>
+
+    <div class="proposal">
+        <div class="text-box">
+            <span>Get It Touch</span>
+            <h3>Have a Project On Your Mind</h3>
+            <a href="{% url 'contact' %}" class="btn">Contact Me</a>
+        </div>
+        <img src="{% static 'img/support.png' %}" class="first">
+    </div>
+
+    <div class="showcase">
+        <img src="{% static 'shapes/ring.png' %}" class="ring">
+        <img src="{% static 'shapes/circle.png' %}" class="circle">
+        <img src="{% static 'shapes/circle.png' %}" class="circle2">
+        <img src="{% static 'shapes/circle.png' %}" class="circle3">
+        <img src="{% static 'shapes/half-ring.png' %}" class="half-ring">
+    </div>
+</section>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const readMoreBtn = document.querySelector('.readMore');
+        const moreText = document.querySelector('.more-text,.more-text1');
+        let isExpanded = false;
+        readMoreBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (!isExpanded) {
+                moreText.style.display = 'inline';
+                readMoreBtn.textContent = 'Read Less';
+            } else {
+                moreText.style.display = 'none';
+                readMoreBtn.textContent = 'Read More';
+            }
+            isExpanded = !isExpanded;
+        });
+    });
+
+
+    document.getElementById('readMore1').addEventListener('click', function (e) {
+        e.preventDefault();
+        const moreText = document.querySelector('.more-text1');
+        const readMoreLink = document.getElementById('readMore1');
+        if (moreText.style.display === 'none') {
+            moreText.style.display = 'inline';
+            readMoreLink.textContent = 'Read Less';
+        } else {
+            moreText.style.display = 'none';
+            readMoreLink.textContent = 'Read More';
+        }
+    });
+
+
+
+    document.querySelector('.readMore2').addEventListener('click', function (e) {
+        e.preventDefault();
+        const moreText = document.querySelector('.more-text2');
+        const readMoreLink = document.querySelector('.readMore2');
+        if (moreText.style.display === 'none') {
+            moreText.style.display = 'inline';
+            readMoreLink.textContent = 'Read Less';
+        } else {
+            moreText.style.display = 'none';
+            readMoreLink.textContent = 'Read More';
+        }
+    });
+
+
+</script>
+
+
+{% endblock content %}
